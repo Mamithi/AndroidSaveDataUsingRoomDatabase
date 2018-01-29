@@ -14,6 +14,8 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "";
@@ -22,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView.Adapter adapter;
 
     FloatingActionButton fab;
+    ArrayList<String> users;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,11 +35,17 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recycler_view);
 
+        users = new ArrayList<>();
+        for (int i = 0; i < 10; i++){
+            users.add("Daniel # " + 1);
+        }
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new UserAdapter(users);
         recyclerView.setAdapter(adapter);
 
         fab = findViewById(R.id.fab);
+
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
