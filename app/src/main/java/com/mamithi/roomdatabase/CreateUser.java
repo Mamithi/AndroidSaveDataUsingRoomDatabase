@@ -16,6 +16,7 @@ import android.widget.EditText;
 public class CreateUser extends AppCompatActivity {
 
     private static final String TAG = "";
+
     EditText firstName;
     EditText lastName;
     EditText email;
